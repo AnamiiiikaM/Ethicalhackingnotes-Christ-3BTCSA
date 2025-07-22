@@ -167,3 +167,113 @@ Impact: Potential customer data breach prevented, company reputation protected.
 
 ✨ Conclusion
 Ethical hacking is not about breaking rules — it's about protecting people, systems, and information in a world full of cyber threats. It blends technical knowledge, legal responsibility, and moral judgment. As technology grows, the role of ethical hackers becomes more crucial in maintaining a secure digital environment.
+
+#day 02
+To successfully install Kali Linux on a Windows system using Oracle VirtualBox, ensure you have the following:
+
+1. Kali Linux VirtualBox Image
+Download the official pre-configured VirtualBox image of Kali Linux:
+🔗 Kali Linux VirtualBox Image (2025.2)
+
+2. Oracle VirtualBox
+Oracle VirtualBox is a free and open-source virtualization software required to run Kali as a virtual machine:
+🔗 Download VirtualBox 7.1.12 (Windows Host)
+
+3. 7-Zip File Archiver
+Used for extracting the .7z compressed Kali image:
+🔗 Download 7-Zip (64-bit)
+
+💾 Storage Requirement: Ensure you have at least 15–20 GB of free disk space available.
+
+🪛 Step-by-Step Installation Guide
+🧩 Step 1: Installing Oracle VirtualBox
+Locate the downloaded VirtualBox .exe installer and double-click to run it.
+
+When prompted by User Account Control, click "Yes" to allow administrator privileges.
+
+The setup wizard launches. Click "Next" on the welcome screen.
+
+On the Custom Setup screen, leave default settings as is. Note the install path, then click "Next".
+
+Click "Next" again, accepting options like creating a shortcut and file associations.
+
+A warning may appear: "Network Interfaces will be reset temporarily." Click "Yes" to proceed.
+
+Click "Install" on the confirmation screen.
+
+Wait for installation to complete, then click "Finish" to launch VirtualBox.
+
+⚠️ Troubleshooting During VirtualBox Installation
+❗ Problem 1: Missing Microsoft Visual C++ Redistributable
+If an error appears about a missing component:
+
+Download and install this dependency:
+🔗 vc_redist.x64.exe
+
+After installation, re-run the VirtualBox setup.
+
+❗ Problem 2: Virtualization Not Enabled in BIOS
+You may see: “AMD-V/Intel VT-x is disabled.”
+
+To fix:
+
+Reboot your system and enter BIOS/UEFI settings:
+
+Dell: F2 or F12
+
+HP: Esc or F10
+
+Lenovo: F2 or Fn + F2
+
+Acer: DEL or F2
+
+Find and enable options such as:
+
+Intel Virtualization Technology or VT-x
+
+SVM Mode (for AMD)
+
+Save changes and exit BIOS.
+
+📦 Step 2: Installing 7-Zip
+Locate the downloaded 7z2500-x64.exe file.
+
+Right-click it and select “Run as Administrator.”
+
+The setup window appears. Click "Install", wait for the installation to finish, then click "Close."
+
+🗃️ Step 3: Extracting Kali Linux Image
+Navigate to the location where you downloaded the Kali .7z archive.
+
+Right-click the file and select “Show more options” (if on Windows 11), hover over 7-Zip, then choose “Extract Here.”
+
+Wait patiently — extraction may take several minutes due to file size (~3–4 GB).
+
+After completion, you will see two extracted files:
+
+.vbox (VirtualBox Machine Definition)
+
+.vdi (Virtual Disk Image)
+
+🖥️ Step 4: Loading Kali Linux in VirtualBox
+(Optional but recommended) Create a new drive partition or use a dedicated folder (10–15 GB minimum) to store the extracted Kali VM.
+
+You can refer to this guide: How to create new partition
+
+Copy the extracted Kali folder to that partition or location.
+
+Locate the .vbox file (usually named like kali-linux-2025.2.vbox) and double-click it.
+
+This automatically opens Oracle VirtualBox and registers the Kali VM.
+
+In VirtualBox, you’ll now see “Kali Linux” listed as a virtual machine. Select it and click “Start.”
+
+🔓 Step 5: Booting and First Login
+On first boot, loading may take longer than usual — don’t worry!
+
+Once you reach the login screen, use the default credentials:
+
+Username: kali
+Password: kali
+
+You’ll now enter the Kali Linux desktop environment.
