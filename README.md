@@ -168,7 +168,7 @@ Impact: Potential customer data breach prevented, company reputation protected.
 ✨ Conclusion
 Ethical hacking is not about breaking rules — it's about protecting people, systems, and information in a world full of cyber threats. It blends technical knowledge, legal responsibility, and moral judgment. As technology grows, the role of ethical hackers becomes more crucial in maintaining a secure digital environment.
 
-#day 02
+# day 02
 To successfully install Kali Linux on a Windows system using Oracle VirtualBox, ensure you have the following:
 
 1. Kali Linux VirtualBox Image
@@ -278,7 +278,7 @@ Password: kali
 
 You’ll now enter the Kali Linux desktop environment.
 
-#day 03
+# day 03
 Change Mode (chmod) Meaning & Purpose
 The chmod, or change mode, command allows an administrator to set or modify a file’s permissions. Every UNIX/Linux file has an owner user and an owner group attached to it, and every file has permissions associated with it. The permissions are as follows: read, write, or execute.
 
