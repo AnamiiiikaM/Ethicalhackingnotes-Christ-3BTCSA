@@ -277,3 +277,98 @@ Username: kali
 Password: kali
 
 You’ll now enter the Kali Linux desktop environment.
+
+#day 03
+Change Mode (chmod) Meaning & Purpose
+The chmod, or change mode, command allows an administrator to set or modify a file’s permissions. Every UNIX/Linux file has an owner user and an owner group attached to it, and every file has permissions associated with it. The permissions are as follows: read, write, or execute.
+
+Change Mode (chmod) Meaning & Application
+UNIX/Linux systems have many users. In this context, a user may refer to an individual or a system operation. UNIX/Linux identifies each user with a UID, and users may be organized into groups.
+
+Change Mode (chmod) Syntax & Mode Parameters
+The syntax of the chmod command is:
+
+chmod mode file
+Example:
+
+chmod 720 readme.txt
+Each number in the mode parameter represents the permissions for a user or group of users:
+
+The first number represents the file’s owner.
+The second number represents the file’s group.
+The third number represents everyone else.
+The Change Mode (chmod) Meaning & Mode Parameters Reference Table below shows the eight numbers that can be used within the chmod parameter. The rwx column specifies read, write, and execute access, offering a binary value for each operation. A “1” means “yes,” a “0” means “no.” If rwx reads 110, then that permission may read and write, but not execute.
+
+Change Mode (chmod) Meaning & Mode Parameters Reference Table
+#	Permission	rwx
+0	none	000
+1	execute only	001
+2	write only	010
+3	write and execute	011
+4	read only	100
+5	read and execute	101
+6	read and write	110
+7	read, write, and execute	111
+For example, if you set your directory permissions to 720, then your permissions would function as follows:
+
+The file’s owner may read, write, and execute the file.
+The file’s group may only write the file.
+All others cannot access the file.
+-------------------
+
+ What Are Linux Commands?
+Linux commands are text-based instructions used in the terminal (command line) to perform various tasks like managing files, running programs, checking system status, and more.
+
+ BASIC LINUX COMMANDS (Must-Know)
+Here's a table with common Linux commands and what they do:
+
+| Command | Description                         | Example                 |
+| ------- | ----------------------------------- | ----------------------- |
+| `pwd`   | Shows **current working directory** | `pwd` → `/home/anamika` |
+| `ls`    | Lists **files and folders**         | `ls` → shows contents   |
+| `cd`    | **Change directory**                | `cd Documents`          |
+| `mkdir` | **Make new directory**              | `mkdir project1`        |
+| `touch` | **Create new file**                 | `touch notes.txt`       |
+| `cp`    | **Copy files/folders**              | `cp file.txt backup/`   |
+| `mv`    | **Move or rename** files/folders    | `mv old.txt new.txt`    |
+| `rm`    | **Remove file** or folder           | `rm file.txt`           |
+| `clear` | **Clear terminal screen**           | `clear`                 |
+| `exit`  | Exit the terminal session           | `exit`                  |
+
+
+ FILE VIEWING & INFO COMMANDS
+| Command         | Description                        | Example            |
+| --------------- | ---------------------------------- | ------------------ |
+| `cat`           | View content of a file             | `cat story.txt`    |
+| `more` / `less` | View large files page by page      | `less bigfile.txt` |
+| `head`          | View **first 10 lines** of a file  | `head report.txt`  |
+| `tail`          | View **last 10 lines**             | `tail log.txt`     |
+| `wc`            | Count **words, lines, characters** | `wc data.txt`      |
+| `file`          | Shows file type                    | `file image.png`   |
+
+ SYSTEM COMMANDS
+| Command    | Description                         | Example    |
+| ---------- | ----------------------------------- | ---------- |
+| `whoami`   | Displays **current logged-in user** | `whoami`   |
+| `uname -a` | Shows **system info**               | `uname -a` |
+| `top`      | View running processes              | `top`      |
+| `ps`       | Shows active processes              | `ps`       |
+| `df -h`    | Disk space usage                    | `df -h`    |
+| `free -h`  | Shows memory usage                  | `free -h`  |
+
+
+PERMISSION & OWNERSHIP COMMANDS
+| Command | Description                 | Example               |
+| ------- | --------------------------- | --------------------- |
+| `chmod` | Change file **permissions** | `chmod 755 script.sh` |
+| `chown` | Change **file owner**       | `chown user file.txt` |
+| `ls -l` | See permissions of files    | `ls -l`               |
+
+ PACKAGE MANAGEMENT (Debian/Ubuntu)
+| Command            | Description                    | Example                |
+| ------------------ | ------------------------------ | ---------------------- |
+| `sudo apt update`  | Update package lists           | `sudo apt update`      |
+| `sudo apt upgrade` | Upgrade all installed packages | `sudo apt upgrade`     |
+| `sudo apt install` | Install new software           | `sudo apt install vlc` |
+| `sudo apt remove`  | Remove software                | `sudo apt remove vlc`  |
+
