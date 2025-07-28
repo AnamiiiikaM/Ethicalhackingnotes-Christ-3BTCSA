@@ -372,3 +372,149 @@ PERMISSION & OWNERSHIP COMMANDS
 | `sudo apt install` | Install new software           | `sudo apt install vlc` |
 | `sudo apt remove`  | Remove software                | `sudo apt remove vlc`  |
 
+# day 04
+ETHICAL HACKING NOTES – NETWORKING CONCEPTS
+1. NAT – Network Address Translation
+Definition:
+NAT is a technique used by routers or firewalls to map private IP addresses within a local network to a public IP address for communication over the internet. It acts as a bridge between internal and external networks by hiding internal IP addresses from the outside world.
+There are three main types of NAT. Static NAT is a one-to-one mapping between private and public IPs and is often used when a specific internal server must be accessed from the outside. Dynamic NAT maps private IPs to a pool of public IPs dynamically, but only works when enough public IPs are available. The most common and practical type is PAT (Port Address Translation), also known as NAT Overload, where many internal IPs share one public IP with different port numbers. In ethical hacking, NAT can be a hurdle because it masks internal IPs. However, techniques like reverse shells or NAT traversal using STUN/TURN servers are used to bypass it and gain access.
+
+Purpose & Use:
+NAT helps preserve IP address space (especially IPv4) and provides a basic layer of security. Devices inside a home or office network may use private IPs like 192.168.1.2, but to the internet, they all appear to be using a single public IP.
+
+Types of NAT:
+
+Static NAT: One private IP is mapped to one public IP. Useful when a server inside the LAN needs to be accessed from the internet.
+
+Dynamic NAT: A pool of public IPs is available and assigned dynamically to internal devices.
+
+PAT (Port Address Translation) or NAT Overload: Many private IPs share one public IP using different port numbers.
+
+Ethical Hacking Relevance:
+
+Makes internal devices unreachable from the internet unless port-forwarding is configured.
+
+Attackers use reverse shells or tunneling tools (like ngrok) to bypass NAT and establish control.
+
+2. Network
+Definition:
+A network is a group of interconnected computers or devices that can communicate and share resources such as files, printers, or internet connections.It is an arrangement of interconnected devices such as computers, servers, switches, and routers that can communicate with each other and share resources. Networks can be wired or wireless, and they vary in size from small local area networks (LANs) to wide area networks (WANs) like the internet. The basic purpose of networking is to enable efficient communication, data transfer, and access to shared resources like files, printers, or applications.
+
+Types of Networks:
+
+LAN (Local Area Network): Covers small areas like homes or offices.
+
+WAN (Wide Area Network): Covers larger areas like cities or countries (e.g., the internet).
+
+MAN (Metropolitan Area Network): Spans a city or campus.
+
+Components:
+
+Routers: Direct traffic between networks.
+
+Switches: Connect devices within a LAN.
+
+Firewalls: Filter traffic and provide security.
+
+Ethical Hacking Relevance:
+
+Understanding how networks are structured helps a hacker determine entry points, attack vectors, and potential pivot paths to move laterally inside a network.
+
+3. IP Address (Internet Protocol Address)
+Definition:
+An IP address is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication. It serves two main purposes: identification and location addressing.
+It is a unique number assigned to each device on a network, allowing them to identify and communicate with each other. The most common format is IPv4, which is a 32-bit address written in dotted decimal format, like 192.168.1.1. 
+Types:
+
+IPv4: 32-bit address, written as 192.168.1.1. Limited to around 4.3 billion addresses.
+
+IPv6: 128-bit address, written as 2001:0db8:85a3:0000:0000:8a2e:0370:7334. Provides a vastly larger address space.
+
+Public vs. Private IPs:
+
+Private: Used within local networks (e.g., 192.168.x.x, 10.x.x.x)
+
+Public: Routable on the internet (e.g., 8.8.8.8)
+
+Ethical Hacking Relevance:
+
+IP Scanning tools like Nmap are used to find live hosts.
+
+Helps in geolocation, OS fingerprinting, and targeting specific devices in a subnet.
+
+4. MAC ID (Media Access Control Address)
+Definition:
+The MAC address is a hardware identifier assigned to a network interface controller (NIC) at the factory. It is unique for each device and operates at Layer 2 (Data Link Layer) of the OSI model.
+It is a unique identifier assigned to a device's network interface card (NIC) by the manufacturer. It operates at the Data Link Layer (Layer 2) of the OSI model and is used for local communication within a network segment. Unlike IP addresses, which can change or be assigned dynamically, MAC addresses are hardcoded into the hardware and follow a format like 00:14:22:01:23:45.
+Format:
+Six groups of two hexadecimal digits separated by colons, e.g., 00:1A:2B:3C:4D:5E.
+
+Ethical Hacking Relevance:
+
+MAC Spoofing: An attacker can change their MAC address to bypass MAC filtering, impersonate another device, or hide identity.
+
+Used in Wi-Fi attacks like deauthentication or ARP spoofing.
+
+5. TCP and UDP
+🔸 TCP (Transmission Control Protocol)
+A reliable, connection-oriented protocol that ensures data is delivered in order and without loss.TCP (Transmission Control Protocol) is a connection-oriented protocol that ensures reliable, ordered, and error-checked delivery of data. Before transmitting, it performs a three-way handshake (SYN, SYN-ACK, ACK) to establish a session. TCP is used in applications where data integrity matters — like web browsing (HTTP/HTTPS), email (SMTP), and file transfer (FTP).
+
+Uses handshaking (SYN, SYN-ACK, ACK) to establish a connection.
+
+Suitable for applications like web browsing (HTTP/HTTPS), email, SSH, and file transfers.
+
+🔸 UDP (User Datagram Protocol)
+A connectionless, unreliable protocol that sends data without checking if it arrived.
+On the other hand, UDP (User Datagram Protocol) is connectionless and focuses on speed rather than reliability. It does not guarantee delivery, order, or error checking, making it ideal for real-time applications like video streaming, online gaming, or DNS queries.
+
+Much faster, used in real-time applications like gaming, VoIP, streaming, and DNS.
+
+Ethical Hacking Relevance:
+
+Tools like Nmap use both TCP and UDP scanning to identify open ports.
+
+TCP can be exploited for SYN flood attacks, while UDP is used for amplification attacks.
+
+6. Reconnaissance
+Definition:
+Reconnaissance is the first and most crucial phase of ethical hacking, often referred to as the information gathering stage. The goal is to collect as much information as possible about the target — be it an individual, a server, or a network — without alerting the target. Recon lays the foundation for the next stages of attack by identifying potential vulnerabilities and entry points.
+
+There are two types of reconnaissance:
+
+Passive Reconnaissance involves gathering information without interacting directly with the target. Techniques include browsing company websites, social engineering, performing WHOIS lookups, searching leaked credentials, or exploring DNS records.
+
+Active Reconnaissance involves directly probing the target through tools like Nmap, Ping, Netcat, or Shodan. These activities generate traffic and may alert security systems, but they provide more precise and actionable data.
+
+Tools:
+
+Nmap, Netcat, Recon-ng, theHarvester, Shodan
+
+Purpose:
+
+Identify IP ranges, open ports, services, OS versions, and network topology to plan the attack strategy.
+
+7. Subnet (Subnetwork)
+Definition:
+A subnet is a smaller division of a large network that is created to organize and secure the network more effectively. Subnetting allows administrators to segment a network logically.It is the process of dividing a large IP network into smaller, more manageable segments called subnets. This technique is used to improve network performance, security, and organization. Each subnet can have its own policies, security settings, and routing rules, making it easier to isolate and manage devices.
+Example:
+
+Original network: 192.168.1.0/24 (254 hosts)
+
+Subnets:
+
+192.168.1.0/26 → 64 addresses
+
+192.168.1.64/26 → 64 addresses
+
+Subnet Mask:
+
+Helps determine the network and host portion of the IP.
+
+For example, 255.255.255.0 for /24 means first 24 bits are network bits.
+
+Ethical Hacking Relevance:
+
+Helps hackers isolate target machines within subnets.
+
+Understanding subnetting is critical when performing internal reconnaissance, privilege escalation, and lateral movement.
+
